@@ -41,7 +41,7 @@ with st.container():
     st.subheader("Hello, I'm Regis :🤝:")
     st.title("An IT solutions architect")
     st.write("I have been in the tech field since I started university in 2009. I did Computer Science for my bachelor's degree and a master's degree in Information Systems, specializing in AI and Big Data Analytics at Uppsala University in Sweden. In these 10+ years, I worked as a web developer, webmaster, tech consultant, data analyst, and now as an IT solutions architect.")
-    st.write("[Read more >](https://fadu.co.rw/)")
+    st.write("[Read more >](https://www.linkedin.com/in/francoisregis/)")
     
 # --- WHAT I DO ---
 with st.container():
@@ -58,7 +58,7 @@ with st.container():
             - 
             """
         )
-        st.write("[Read more >](https://fadu.co.rw/)")
+        st.write("[Read more >](#)")
     with right_column:
         st.lottie(lottie_analytics, height=300, key="analytics")
         
