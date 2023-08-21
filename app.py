@@ -33,6 +33,7 @@ local_css("style/style.css")
 lottie_analytics = load_lottieurl("https://lottie.host/7a9c3119-35c2-4ccc-9e6f-44331990cc2c/BVgrTYAO8L.json")
 lottie_coding =load_lottieurl("https://lottie.host/9d7e5e15-25dc-445c-b71b-8683f4105d12/PswDRysQJQ.json")
 img_contact_form = Image.open("images/FaduTech_Logo.png")
+img_process_view = Image.open("images/process view.png")
 
 
 # ---- HEADER SECTION ----
@@ -53,12 +54,10 @@ with st.container():
         st.write(
             """
             - As an IT solutions architect, my primary responsibility is to design and oversee the implementation of effective, scalable, and secure IT solutions that align with organization's business goals.
-            - I collect, process, and interpret large datasets to extract valuable insights and inform data-driven decision-making for organizations.
-            -  I design, develop, and deploy complex machine learning models and systems to solve real-world problems and optimize algorithm performance for various applications.
-            - 
+            - As the solutions architect, I'm part of an entrepreneurial-spirited organization, and in charge of designing the roadmap to (re)solve architectural issues, unifying data flows, and driving organizational impact.
+            - I bring oversight, analysis, and recommendations for the way various systems/tools (e.g., the financial system, the contracting and procurement system etc.) are (or could be) integrated, build the roadmap to deliver on the IT department’s vision, and lead the execution of a fit-for-purpose data flow architecture.
             """
         )
-        st.write("[Read more >](#)")
     with right_column:
         st.lottie(lottie_analytics, height=300, key="analytics")
         
@@ -72,15 +71,24 @@ with st.container():
     with image_column:
         # insert image
         st.image(img_contact_form)
+        st.write("##")
+        st.write("##")
+        st.image(img_process_view)
     with text_column:
         st.subheader("Currently running and ongoing projects:")
+        st.write("FADU Techs company")
         st.write(
              """
             - FADU Techs is an emerging mobile and web application development, data and web hosting company in Rwanda. 
             - I am a co-founder of Fadu Techs. Through FADU Techs, I have got the exposure and experience to work with different sectors by offering IT-based solutions and breaking down complex and technical topics for stakeholders to understand as well as heading the analytics department.
-            - 
             """
         )
+        st.write("[Read more >](https://fadu.co.rw/)")
+        st.write("##")
+        st.write("SAD(Solution architecture document)")
+        st.write("A solution architecture document outlines the high-level design and structure of a proposed solution to address a specific business problem or technical challenge. It serves as a blueprint for development teams and stakeholders, providing a clear understanding of how different components will interact to achieve the desired outcomes.")
+        st.write("As most of you requested, I have developed a solution architecture document to assist whoever needs a SAD template. This document has a business view, process view, non-functional requirements, conceptual view, solution view, data view, security view, and integration view.")
+        st.write("[Read more >](#)")
         
 # ---- CONTACT FORM --- using https://formsubmit.co/
 
@@ -104,12 +112,27 @@ with st.container():
         st.markdown(contact_form, unsafe_allow_html=True)
     with right_column:
         # -- st.empty()
-        st.lottie(lottie_coding, height=450, key="coding")
+        st.write("Connecting is key in our digital age. Reach out and let's chat! Whether you have questions, ideas, or just want to say hi, don't hesitate to get in touch with me. Communication bridges gaps and fosters understanding. Feel free to drop a message – I'm here to listen and engage.")
+        st.lottie(lottie_coding, height=350, key="coding")
         
 # --- COPY RIGHTS --
 
 with st.container():
-    st.write("---")
-    st.write("@ Regis 2023")
+    left_column1, left_column2, right_column1, right_column2 = st.columns(4)
+    with left_column1:
+        st.write("---")
+        st.write("@ Regis 2023")
+    
+    with left_column2:
+        st.write("---")
+        st.write("[LinkedIn >](https://www.linkedin.com/in/francoisregis/)")
+        
+    with right_column1:
+        st.write("---")
+        st.write("[Kaggle >](https://www.kaggle.com/faduregis)")
+        
+    with right_column2:
+        st.write("---")
+        st.write("[Github >](https://github.com/Regis7)")
       
     
