@@ -5,7 +5,7 @@ from PIL import Image
 import streamlit.components.v1 as components
 
 # ----- PAGE CONFIGURATION ---
-st.set_page_config(page_title="faduregis", page_icon=":tada:", layout = "wide")
+st.set_page_config(page_title="faduregis", page_icon=":🛠:", layout = "wide")
 
 def load_lottieurl(url):
     r=requests.get(url)
@@ -15,14 +15,15 @@ def load_lottieurl(url):
 
 # ---- HEADER SECTION ----
 with st.container():
-    st.title("Currently busy with below projects")
+    st.title(" 📌 Currently busy with below projects")
     st.write(""" 
 As someone involved in technology, I endeavor to oversee as many tech projects as I can to continuously navigate the landscape of opportunities.""")
 
 # --- LOAD ASSETS ---
 
-img_contact_form = Image.open("images/FaduTech_Logo.png")
-img_process_view = Image.open("images/process view.png")
+img_project_fadutech = Image.open("images/FaduTech_Logo.png")
+img_project_faduhost = Image.open("images/faduhost.png")
+img_project_techadvisor = Image.open("images/process view.png")
 
    
 # ---- PROJECT ---
@@ -34,9 +35,22 @@ with st.container():
     image_column, text_column = st.columns((1,2))
     with image_column:
         # insert image
-        st.image(img_contact_form)
+        st.image(img_project_fadutech)
         st.write("##")
         st.write("##")
+        st.write("##")
+        st.write("##")
+        st.image(img_project_faduhost)
+        st.write("##")
+        st.write("##")
+        st.write("##")
+        st.write("##")
+        st.write("##")
+        st.write("##")
+        st.write("##")
+        st.write("##")
+        st.image(img_project_techadvisor)
+        
         #st.image(img_process_view)
 
     with text_column:
@@ -82,7 +96,7 @@ with st.container():
     
     with left_column2:
         st.write("---")
-        st.link_button("LinkedIn", "https://www.linkedin.com/in/francoisregis/")
+        st.write("[LinkedIn >](https://www.linkedin.com/in/francoisregis/)")
         
     with right_column1:
         st.write("---")

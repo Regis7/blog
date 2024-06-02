@@ -1,6 +1,7 @@
 # Modules
 import requests
 import streamlit as st
+import os
 from streamlit_lottie import st_lottie
 from PIL import Image
 import streamlit.components.v1 as components
@@ -9,7 +10,7 @@ import numpy as np
 
 
 # ----- PAGE CONFIGURATION ---
-st.set_page_config(page_title="faduregis", page_icon=":tada:", layout = "wide")
+st.set_page_config(page_title="faduregis", page_icon=":🛠:", layout = "wide")
 
 def load_lottieurl(url):
     r=requests.get(url)
@@ -17,12 +18,107 @@ def load_lottieurl(url):
         return None
     return r.json()  
 
-# Function
-df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=['lat', 'lon'])
 
-st.map(df)
+with st.container():
+    st.title(" 🛠 FaduRegis' palyground")
+   #st.subheader("FaduRegis")
+    st.write(""" 
+FaduRegis is your premier hub for hands-on learning and experimentation in technology, coding, data analytics, and data science. Whether you're a novice or a seasoned developer, our platform provides a comprehensive array of tools and resources to enhance your skills and transform your ideas into reality.
+
+""")
+    
+# Initialize the visitor count
+if not os.path.exists('visitor_count.txt'):
+    with open('visitor_count.txt', 'w') as f:
+        f.write('0')
+
+# Read the current visitor count
+with open('visitor_count.txt', 'r+') as f:
+    count = int(f.read()) + 1
+    f.seek(0)
+    f.write(str(count))
+    f.truncate()
+
+# Streamlit app
+st.write(f"You are visitor number: {count} welcome back soon!")
+
+
+from serpapi import GoogleSearch
+
+# Set your SerpApi API key
+SERPAPI_API_KEY = os.getenv("SERPAPI_API_KEY", "5756fbdfdafb0ac6ea4d29e6aba9245e20e833ba78959b766e205471662bf930")
+
+def fetch_jobs(query, location, num_results=100):
+    params = {
+        "engine": "google_jobs",
+        "q": query,
+        "location": location,
+        "api_key": SERPAPI_API_KEY,
+        "num": num_results
+    }
+    search = GoogleSearch(params)
+    results = search.get_dict()
+    return results.get("jobs_results", [])
+
+def main():
+    st.title("Top 100 Jobs in the Netherlands")
+
+    job_query = st.text_input("Enter job title or keyword:", "Software Engineer")
+    location = "Netherlands"
+    num_results = 100
+
+    if st.button("Search"):
+        with st.spinner("Fetching job listings..."):
+            jobs = fetch_jobs(job_query, location, num_results)
+            if jobs:
+                st.success(f"Found {len(jobs)} jobs")
+                for idx, job in enumerate(jobs, start=1):
+                    st.write(f"### {idx}. {job['title']}")
+                    st.write(f"**Company**: {job['company_name']}")
+                    st.write(f"**Location**: {job['location']}")
+                    st.write(f"**Description**: {job['description'][:200]}...")  # Show a snippet of the description
+                   # st.write(f"[More Info]({job['link']})")
+                    st.write("---")
+            else:
+                st.error("No jobs found. Please try a different query.")
+
+if __name__ == "__main__":
+    main()
+
+
+
+################
+
+# from serpapi import GoogleSearch
+
+# params = {
+#   "engine": "google_jobs",
+#   "q": "Manager",
+#   "location": "Rwanda",
+#   "google_domain": "google.com",
+#   "gl": "rw",
+#   "hl": "en",
+#   "chips": "date_posted:month",
+#   "chips": "employment_type:PARTTIME",
+#   "api_key": "5756fbdfdafb0ac6ea4d29e6aba9245e20e833ba78959b766e205471662bf930"
+# }
+
+# search = GoogleSearch(params)
+# results = search.get_dict()
+# # print(results)
+
+# for job_result in results['jobs_results']:
+#     #print(job_result['job_id'])
+#     print(job_result['title'])
+#     print(job_result['company_name'])
+#     # print(job_result['link'])
+#     print(job_result['location'])
+#     print(job_result['extensions'])
+#     print(job_result['detected_extensions'])
+
+#     print('-----------------------')
+
+#############################################################
 
 # --- COPY RIGHTS --
 
