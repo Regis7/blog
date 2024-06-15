@@ -61,7 +61,8 @@ def fetch_jobs(query, location, num_results=100):
     return results.get("jobs_results", [])
 
 def main():
-    st.title("Top 100 Jobs in the Netherlands")
+    st.title("Search for jobs in the Netherlands")
+    st.subheader("! The app is still under development to ensure everything is fine!")
 
     job_query = st.text_input("Enter job title or keyword:", "Software Engineer")
     location = "Netherlands"
@@ -126,7 +127,7 @@ with st.container():
     left_column1, left_column2, right_column1, right_column2 = st.columns(4)
     with left_column1:
         st.write("---")
-        st.write("@ Regis 2024")
+        st.write("@ faduregis 2024")
     
     with left_column2:
         st.write("---")

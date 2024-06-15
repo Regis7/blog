@@ -1,8 +1,8 @@
 import requests
-import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
 import streamlit.components.v1 as components
+import streamlit as st
 
 #from streamlit-option-menu import option-menu
 
@@ -113,7 +113,7 @@ with st.container():
     left_column1, left_column2, right_column1, right_column2, right_column3 = st.columns(5)
     with left_column1:
         st.write("---")
-        st.write("@ Regis 2024")
+        st.write("@ faduregis 2024")
     
     with left_column2:
         st.write("---")

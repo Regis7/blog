@@ -43,7 +43,7 @@ def plot_skills(skill_counter):
     st.pyplot(plt)
 
 def main():
-    st.title("Top Jobs and Skills")
+    st.title("Jobs and needed skills")
 
     job_query = st.text_input("Enter job title or keyword:", "Software Engineer")
     location = st.text_input("Enter country or city name:", "Netherlands")
