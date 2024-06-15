@@ -1,9 +1,9 @@
-import streamlit as st
 from serpapi import GoogleSearch
 import os
 import re
 from collections import Counter
 import matplotlib.pyplot as plt
+import streamlit as st
 
 # Set your SerpApi API key
 SERPAPI_API_KEY = os.getenv("SERPAPI_API_KEY", "5756fbdfdafb0ac6ea4d29e6aba9245e20e833ba78959b766e205471662bf930")
