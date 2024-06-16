@@ -60,7 +60,7 @@ with st.container():
             - FADU Tech is an emerging mobile and web application development, data and web hosting company in Rwanda. It has a vision of becoming one of the leading mobile and web application development companies in Africa. We make sure that we have the latest trends and technologies at hand. FADU Tech has well experienced employees in the tech filed.
             """
         )
-        st.write("[Read more >](https://fadu.co.rw/)")
+        st.write("[Read more >](https://fadutech.com/)")
         st.write("##")
     
     with text_column:

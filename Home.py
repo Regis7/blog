@@ -2,7 +2,7 @@
 import requests
 import streamlit as st
 import os
-from streamlit_lottie import st_lottie
+#from streamlit_lottie import st_lottie
 from PIL import Image
 import streamlit.components.v1 as components
 import pandas as pd
@@ -77,8 +77,9 @@ def main():
                     st.write(f"### {idx}. {job['title']}")
                     st.write(f"**Company**: {job['company_name']}")
                     st.write(f"**Location**: {job['location']}")
+                    st.write(f"**Posted at**: {job['detected_extensions']})")
+                    st.write(f"**Links**: {job['related_links']})")
                     st.write(f"**Description**: {job['description'][:200]}...")  # Show a snippet of the description
-                   # st.write(f"[More Info]({job['link']})")
                     st.write("---")
             else:
                 st.error("No jobs found. Please try a different query.")
@@ -87,37 +88,6 @@ if __name__ == "__main__":
     main()
 
 
-
-################
-
-# from serpapi import GoogleSearch
-
-# params = {
-#   "engine": "google_jobs",
-#   "q": "Manager",
-#   "location": "Rwanda",
-#   "google_domain": "google.com",
-#   "gl": "rw",
-#   "hl": "en",
-#   "chips": "date_posted:month",
-#   "chips": "employment_type:PARTTIME",
-#   "api_key": "5756fbdfdafb0ac6ea4d29e6aba9245e20e833ba78959b766e205471662bf930"
-# }
-
-# search = GoogleSearch(params)
-# results = search.get_dict()
-# # print(results)
-
-# for job_result in results['jobs_results']:
-#     #print(job_result['job_id'])
-#     print(job_result['title'])
-#     print(job_result['company_name'])
-#     # print(job_result['link'])
-#     print(job_result['location'])
-#     print(job_result['extensions'])
-#     print(job_result['detected_extensions'])
-
-#     print('-----------------------')
 
 #############################################################
 
