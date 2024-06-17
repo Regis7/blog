@@ -1,5 +1,5 @@
 import requests
-from streamlit_lottie import st_lottie
+# from streamlit_lottie import st_lottie
 from PIL import Image
 import streamlit.components.v1 as components
 import streamlit as st
@@ -21,9 +21,9 @@ As someone involved in technology, I endeavor to oversee as many tech projects a
 
 # --- LOAD ASSETS ---
 
-img_project_fadutech = Image.open("images/FaduTech_Logo.png")
-img_project_faduhost = Image.open("images/faduhost.png")
-img_project_techadvisor = Image.open("images/process view.png")
+# img_project_fadutech = Image.open("images/FaduTech_Logo.png")
+# img_project_faduhost = Image.open("images/faduhost.png")
+# img_project_techadvisor = Image.open("images/process view.png")
 
    
 # ---- PROJECT ---
@@ -31,60 +31,34 @@ img_project_techadvisor = Image.open("images/process view.png")
 with st.container():
     st.write("---")
     st.header("My projects")
-    st.write("##")
-    image_column, text_column = st.columns((1,2))
-    with image_column:
-        # insert image
-        st.image(img_project_fadutech)
-        st.write("##")
-        st.write("##")
-        st.write("##")
-        st.write("##")
-        st.image(img_project_faduhost)
-        st.write("##")
-        st.write("##")
-        st.write("##")
-        st.write("##")
-        st.write("##")
-        st.write("##")
-        st.write("##")
-        st.write("##")
-        st.image(img_project_techadvisor)
+    
+    # image_column, text_column = st.columns((1,2))
+    # with image_column:
+    #     # insert image
+    #     st.image(img_project_fadutech)
+    #     st.write("##")
+    #     st.image(img_project_faduhost)
+
         
         #st.image(img_process_view)
 
-    with text_column:
-        st.write("Tech service provider")
-        st.write(
-             """
-            - FADU Tech is an emerging mobile and web application development, data and web hosting company in Rwanda. It has a vision of becoming one of the leading mobile and web application development companies in Africa. We make sure that we have the latest trends and technologies at hand. FADU Tech has well experienced employees in the tech filed.
+    #with text_column:
+    st.write("Tech service provider")
+    st.write(
             """
-        )
-        st.write("[Read more >](https://fadutech.com/)")
-        st.write("##")
+        - FADU Tech is an emerging mobile and web application development, data and web hosting company in Rwanda. It has a vision of becoming one of the leading mobile and web application development companies in Africa. We make sure that we have the latest trends and technologies at hand. FADU Tech has well experienced employees in the tech filed.
+        """
+    )
+    st.write("[Read more >](https://fadutech.com/)")
     
-    with text_column:
-        st.write("Hosting service provider")
-        st.write(
-             """
-            - FADU Tech is an emerging mobile and web application development, data and web hosting company in Rwanda. It has a vision of becoming one of the leading mobile and web application development companies in Africa. We make sure that we have the latest trends and technologies at hand. FADU Tech has well experienced employees in the tech filed.
+    #with text_column:
+    st.write("Hosting service provider")
+    st.write(
             """
-        )
-        st.write("[Read more >](https://faduhost.com/)")
-        st.write("##")
-
-        st.write("Blogging")
-        st.write(
-            """
-            - After ten years in the tech industry, working in Africa and Europe for research institutions,
-            companies, and organizations, I thought about how I could contribute to the wider community to
-            leverage tech use in our daily activities. Techadvisors was created to help reach a wide audience and
-            share our experiences. After a while of posting tech tips on the web, many tech practitioners joined.
-
-            - A group of committed tech lovers contribute to the posts we publish on this platform.
-            """
-        )
-        st.write("[Read more >](https://techadvisors.nl/)")
+        - FADU Tech is an emerging mobile and web application development, data and web hosting company in Rwanda. It has a vision of becoming one of the leading mobile and web application development companies in Africa. We make sure that we have the latest trends and technologies at hand. FADU Tech has well experienced employees in the tech filed.
+        """
+    )
+    st.write("[Read more >](https://faduhost.com/)")
         
 # --- COPY RIGHTS --
 

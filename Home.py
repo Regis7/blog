@@ -2,7 +2,7 @@
 import requests
 import streamlit as st
 import os
-from streamlit_lottie import st_lottie
+# from streamlit_lottie import st_lottie
 from PIL import Image
 import streamlit.components.v1 as components
 import pandas as pd
