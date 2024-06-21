@@ -2,7 +2,6 @@
 import requests
 import streamlit as st
 import os
-
 from PIL import Image
 import streamlit.components.v1 as components
 import pandas as pd
